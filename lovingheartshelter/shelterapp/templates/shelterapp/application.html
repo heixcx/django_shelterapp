@@ -1,0 +1,49 @@
+{% extends "shelterapp/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="application">
+  <h1>Adoption Form</h1>
+  <div class="inputs">
+		<form class="form-adopt"  method="post" action="/shelterapp/my/apply/">
+			{% if message %}
+			<div class="alert">{{ message }}</div>
+			{% endif %}
+			{% csrf_token %}
+			<!-- {{ adopt_form }} -->
+			<div class="form-group">
+				{{ adopt_form.driverlicense.label_tag }}<br>
+				{{ adopt_form.driverlicense}}<br><br>
+			</div>
+			<div class="form-group">
+				{{ adopt_form.address.label_tag }}<br>
+				{{ adopt_form.address }}<br><br>
+			</div>
+			<div class="form-group">
+				{{ adopt_form.animalname.label_tag }}<br>
+				{{ adopt_form.animalname }}<br><br>
+			</div>
+			<div class="form-group">
+				{{ adopt_form.animalid.label_tag }}<br>
+				{{ adopt_form.animalid }}<br><br>
+			</div>
+			<div class="form-group">
+				{{ adopt_form.otherpets.label_tag }}<br>
+				{{ adopt_form.otherpets }}<br><br>
+			</div>
+			<div class="form-group">
+				{{ adopt_form.homecheck.label_tag }}<br>
+				{{ adopt_form.homecheck }}<br><br>
+			</div>
+			<div class="form-group">
+				{{ adopt_form.checkcalls.label_tag }}<br>
+				{{ adopt_form.checkcalls }}<br><br>
+			</div>
+			<!-- <input type="submit" id="submit-adopt" value="Submit"> -->
+			<button type="submit" id="submit-adopt">Submit</button>
+		</form>
+		
+  </div>
+	
+</div>
+{% endblock %}

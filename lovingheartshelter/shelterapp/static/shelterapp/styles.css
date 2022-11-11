@@ -1,0 +1,1228 @@
+/*
+******************************************
+Body Background Section
+******************************************
+*/
+
+/*
+Limit the body content in the middle 80% of the whole page,
+Set background color,   
+Set the default font to Muli
+*/
+body {
+  margin-left: 10%;
+  margin-right: 10%;
+  background-size: cover;
+  background-color: rgb(240, 233, 223);
+  font-family: 'Muli';
+}
+
+/*
+*******************************************
+Webpage Heading and Signup Section
+*******************************************
+*/
+
+/* Put divider close between login and signup links */
+.divider {
+  position: absolute;
+  color:#717171;
+  font-size: 24px;
+}
+
+/* Make the login/signup links floating at right of webpage heading area */
+.login {
+  float:right;
+  position:relative;
+  margin-top: 20px;
+  font-size: 20px;
+  padding: 15px 15px;
+}
+
+/* Put a hover on the top of login and signup links when move the cursor on them */
+.login a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Put a hignlight on the login and signup links when click on them */
+.login a.active {
+  background-color: #e6b82f;
+  color: white;
+}
+
+/*
+Set the color of website heading,
+Align the website heading, logo, and login/signup links vertically  
+*/
+.heading *{
+  color: #e89c2a;
+  text-decoration: none;
+  display:inline-block;
+  vertical-align: middle;
+}
+
+/*
+*******************************************
+Webpage Top Navigation Section
+*******************************************
+*/
+
+/* Set margin, color, and round corner of the top navigation container */
+.topnav {
+  margin-top: 10px;
+  background-color: #d97228;
+  border-radius: 10px 10px 0px 0px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Set the position, color, padding, and font of navigation elements */
+.topnav a, #searchbar{
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+  font-size: 20px;
+}
+  
+/* Put a hover on the top of navigation elements when move the cursor on them */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Put a hignlight on the navigation elements when click on them */
+.topnav a.active {
+  background-color: #e6b82f;
+  color: white;
+}
+
+/* Make the search bar floating at the right of the top navigation */
+.searchcontainer {
+  float: right;
+}
+
+/* Make the text in search bar start from left */
+#searchbar{
+	text-align: left;
+	color: #717171;
+	border: none;
+	padding: 16px;
+	margin: 5px 0;
+	border-radius: 10px;
+}
+
+/* 
+Media query for the top navigation on screen less than 600px, 
+Stack all navigation elements vertically 
+*/
+@media screen and (max-width: 600px) {
+  .topnav a, #searchbar {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+  }
+}
+
+/*
+********************************************
+Home Slideshow Section
+********************************************
+*/
+
+/* Slideshow container */
+.slidescontainer {
+  position: relative;
+  margin: auto;
+  overflow: auto;
+}
+
+/* Hide the images by default */
+.slides {
+  display: none;
+  text-align: center;
+}
+
+/* Next & previous buttons*/
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text at the right side of slide pictures */
+.text {
+  color: #fff;
+  background-color: rgba(153, 153, 153, 0.8);
+  font-size: 20px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 15%;
+  left: 65%;
+  right: 5%;
+  text-align: center;
+}
+
+/* navigation Button below the caption text on the slide pictures */
+.slidebutton {
+  margin-top: 15%;
+  margin-bottom: 10px;
+  font-size: 20px;
+  padding: 20px 40px;
+  border: none;
+  border-radius: 10px; 
+}
+
+/* Put a hover on the top of navigation button when move the cursor on them */
+.slidebutton:hover {
+  background-color: rgb(109, 109, 109);
+  color: white;
+}
+
+/* Center the caption text and navigation button */
+.slidebutton, .text {
+  text-align: center;
+}
+
+
+/* The dot indicators below the slideshow */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  margin-top: 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* 
+Put a highlight on the dots when the respevtive picture is selected
+and a cursor moved on the dot
+*/
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation when switching slide pictures */
+.slides.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+/* Control the transparent level in the intermediate steps of fading animation */
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* 
+Media query for caption text on screen less than 600px, 
+let the browser put the cpation text below the slide picture
+*/
+@media screen and (max-width: 600px) {
+	.slidescontainer .text{
+		width: 100%;
+		display: contents;
+		color: rgba(77, 77, 77, 0.8);
+    top: 100px;
+  }
+}
+
+/*
+********************************************
+Home About Us Section
+********************************************
+*/
+
+/* Center the about us heading */
+.aboutus h1 {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+/* Set the width of whoweare image*/
+.whoweare img {
+	width: 50%;
+}
+
+/* Set the image width specifically for firefox */
+@-moz-document url-prefix() {
+  .whoweare img {
+		width: 225%;
+  }
+}
+
+/* Pack whoweare items around the center in a flexible container */
+.whoweare {
+  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  background-color: #fbf9f9;
+  text-align: center;
+  overflow:auto;
+}
+
+/* Pack whatwedo items around the center in a flexible container */
+.whatwedo {
+  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  background-color: #fbf9f9;
+  text-align: center;
+  overflow:auto;
+}
+
+/* Set the width of whatwedo image*/
+.whatwedo img {
+	width: 50%;
+}
+
+/* Set the image width specifically for Firefox */
+@-moz-document url-prefix() {
+  .whatwedo img {
+		width: 148%;
+  }
+}
+
+/* 
+Media query for caption text on screen less than 600px, 
+let the browser put all elements in a vertical line
+*/
+@media only screen and (max-width: 600px) {
+	.whoweare img, .whatwedo img {
+		width: 100%;
+	}
+	.whoweare, .whatwedo {
+		display:block;
+	}
+}
+
+/*
+********************************************
+Webpage Footer Section
+********************************************
+*/
+
+/* Set the margin, background, color, display of footer container */
+.footercontainer {
+  margin-top: 50px;
+  background-color:#d97228;
+  color:#fff;
+  display: flex;
+  align-items: top;
+  text-align: center;
+}
+
+/* Set the padding, font size, width, etc of footer elements  */
+.footercontainer .fa {
+  padding: 10px 10px;
+  font-size: 32px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+/* Put a hover on the top of social media icons when move the cursor on it */
+.footercontainer .fa:hover {
+    opacity: 0.7;
+}
+
+/* Set color of facebook icon */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Set color of twitter icon */
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+/* Set color of instagram icon */
+.fa-instagram {
+  background: #d6249f;
+  color: white;
+}
+
+/* Set margin of copyright */
+.copyright {
+  margin-top: 10px;
+}
+
+/*
+********************************************
+Webpage livechat Section
+********************************************
+*/
+
+/* Set position, margin, color, shadow, etc, of livechat circle */
+#chat-circle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 10;
+  background: #d97228;
+  width: 35px;
+  height: 35px;  
+  border-radius: 50%;
+  color: white;
+  padding: 28px;
+  cursor: pointer;
+  box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.6), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* .btn#my-btn {
+    background: white;
+    padding-top: 13px;
+    padding-bottom: 12px;
+    border-radius: 45px;
+    padding-right: 40px;
+    padding-left: 40px;
+    color: #d97228;
+} */
+
+/* #chat-overlay {
+    background: rgba(255,255,255,0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: none;
+} */
+
+/* Set display, color, position, demension, etc, of livechat box*/
+.chat-box {
+  display:none;
+  background: #efefef;
+  position:fixed;
+  right:30px;
+  bottom:50px;  
+  width:350px;
+  z-index: 10;
+  max-width: 85vw;
+  max-height:100vh;
+  border-radius:5px;  
+  box-shadow: 0px 5px 35px 9px #464a92;
+  box-shadow: 0px 5px 35px 9px #ccc;
+}
+
+/* Set color, border, font size, etc, of the heading in the livechar box */
+.chat-box-header {
+  background: #d97228;
+  height:50px;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px; 
+  color:white;
+  text-align:center;
+  font-size:20px;
+  padding-top:17px;
+}
+
+/* Set the position and margin of the close button in the livechat box */
+.chat-box-toggle {
+  float:right;
+  margin-right:15px;
+  cursor:pointer;
+}
+
+
+/* .chat-box-body {
+  position: relative;  
+  height:370px;  
+  height:auto;
+  border:1px solid #ccc;  
+  overflow: hidden;
+} */ 
+
+/* .chat-box-body:after {
+  content: "";
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height:100%;
+  position: absolute;
+  z-index: -1;   
+}
+
+/* Set color, width, position, border of input text in the livechat box */
+#chat-input {
+  background: #f4f7f9;
+  width:100%; 
+  position:relative;
+  height:47px;  
+  padding-top:10px;
+  padding-right:50px;
+  padding-bottom:10px;
+  padding-left:15px;
+  border:none;
+  resize:none;
+  outline:none;
+  border:1px solid #ccc;
+  color:#888;
+  border-top:none;
+  border-bottom-right-radius:5px;
+  border-bottom-left-radius:5px;
+  overflow:hidden;  
+}
+
+/* Set the input container at the botton of the livechat box */
+.chat-input form {
+    margin-bottom: 0;
+}
+
+/* Set the color of placeholder in the input box by different browsers */
+#chat-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #ccc;
+}
+#chat-input::-moz-placeholder { /* Firefox 19+ */
+  color: #ccc;
+}
+#chat-input:-ms-input-placeholder { /* IE 10+ */
+  color: #ccc;
+}
+#chat-input:-moz-placeholder { /* Firefox 18- */
+  color: #ccc;
+}
+
+/* Set the position, color, broder of the message submit button */
+.chat-submit {  
+  position:absolute;
+  bottom:3px;
+  right:10px;
+  background: transparent;
+  box-shadow:none;
+  border:none;
+  border-radius:50%;
+  color:#d97228;
+  width:35px;
+  height:35px;  
+}
+
+/* Set padding, height, and content overflow of message display */
+.chat-logs {
+  padding:15px; 
+  height:370px;
+  overflow-y:scroll;
+}
+
+/* Set the color of track for the scrollbar */
+.chat-logs::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+/* Set the width and color of scrollbar */
+.chat-logs::-webkit-scrollbar
+{
+	width: 5px;  
+	background-color: #F5F5F5;
+}
+
+/* Set the color of the draggable scrolling handle */
+.chat-logs::-webkit-scrollbar-thumb
+{
+	background-color: #d97228;
+}
+
+/* 
+Media query for the livechat box on screen less than 600px, 
+Keep the height of the livechat box in 40% of the viewport height
+*/
+@media only screen and (max-width: 500px) {
+   .chat-logs {
+    height:40vh;
+    }
+}
+
+/* Set demension, border, and position of other's avatar */
+.chat-msg.user > .msg-avatar img {
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  float:left;
+  width:15%;
+}
+
+/* Set demension, border, and position of self's avatar */
+.chat-msg.self > .msg-avatar img {
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  float:right;
+  width:15%;
+}
+
+/* Set the color, padding, margin, position of the message text */
+.cm-msg-text {
+  background:white;
+  padding:10px 15px 10px 15px;  
+  color:#666;
+  max-width:75%;
+  float:left;
+  margin-left:10px; 
+  position:relative;
+  margin-bottom:20px;
+  border-radius:30px;
+}
+
+/* Stagger the messages from different senders */
+.chat-msg {
+  clear:both;    
+}
+
+/* 
+Put self's message at the right side of the livechat box,
+Set margin, background, and color of self's message
+*/
+.chat-msg.self > .cm-msg-text {  
+  float:right;
+  margin-right:10px;
+  background: #d97228;
+  color:white;
+}
+
+/* .cm-msg-button>ul>li {
+  list-style:none;
+  float:left;
+  width:50%;
+} 
+.cm-msg-button {
+    clear: both;
+    margin-bottom: 70px;
+} */
+
+/*
+********************************************
+Adopt Animal Tab Section
+********************************************
+*/
+
+/* Center the adoptable animals heading */
+.animals h1{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Animal tabs */
+#tabs {
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* #tabs li {
+  float: left;
+  margin: 0 .5em 0 0;
+} */
+
+/* Set color, size, padding, etc, of animal tabs */
+#tabs a {
+  position: relative;
+  background: #ddd;
+  background-image: linear-gradient(to bottom, #fff, #ddd);
+  padding: .7em 3.5em;
+  float: left;
+  font-size: 20px;
+  text-decoration: none;
+  color: #444;
+  text-shadow: 0 1px 0 rgba(255,255,255,.8);
+  border-radius: 5px 0 0 0;
+  box-shadow: 0 2px 2px rgba(0,0,0,.4);
+}
+
+/* Put a hover on the top of animal tabs when move the cursor on them */
+#tabs a:hover, #tabs a:hover::after, #tabs a:focus, #tabs a:focus::after {
+  background: #fff;
+}
+
+/* #tabs a:focus {
+  outline: 0;
+} */
+
+/* Add beveled corner after the rectangular tab */
+#tabs a::after {
+  content:'';
+  position:absolute;
+  z-index: 1;
+  top: 0;
+  right: -.5em;
+  bottom: 0;
+  width: 1em;
+  background: #ddd;
+  background-image: linear-gradient(to bottom, #fff, #ddd);
+  box-shadow: 2px 2px 2px rgba(0,0,0,.4);
+  transform: skew(10deg);
+  border-radius: 0 5px 0 0;
+}
+
+/* Make the color and stack order of selected tab consistent with the content */
+#tabs #current a, #tabs #current a::after {
+  background: #fff;
+  z-index: 3;
+}
+
+/* Set the color, padding, position, etc, of content container below animal tabs */
+#content {
+  background: #fff;
+  padding: 2em;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  border-radius: 0 5px 5px 5px;
+  box-shadow: 0 -2px 3px -2px rgba(0, 0, 0, .5);
+  overflow: auto;
+}
+
+/*
+********************************************
+Adopt Animal Figures Section
+********************************************
+*/
+
+/* Set grid style dispaly for all animal figures */
+#tab1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 75vw;
+  margin: 20px auto;
+}
+
+/* Set grid style dispaly for dog figures */
+#tab2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 75vw;
+  margin: 20px auto;
+}
+
+/* Set grid style dispaly for cat figures */
+#tab3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 75vw;
+  margin: 20px auto;
+}
+
+/* Set grid style dispaly for other animal figures */
+#tab4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 75vw;
+  margin: 20px auto;
+}
+
+/* Set position of animal figures and captions */
+figure {
+  margin: 10px;
+  padding: 0px;
+  position: relative;
+}
+
+/* 
+Set border and blur shadow around the figures,
+Set all figures in the same-sized box
+*/
+.animals img {
+  filter: hue-rotate(10);
+  padding: 0px;
+  border: 3px solid #fff;
+  box-shadow: 0px 0px 3px #ccc;
+  z-index: 0;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Set background, color, font size, etc, of captions for all figures */
+figcaption {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  text-align: center;
+  color: #5e423f;
+  z-index: 1;
+  padding: 9px 0px 11px 0px;
+  text-transform: uppercase;
+  font-size: 20px;
+  position: absolute;
+  bottom: 6px;
+}
+
+/* 
+Media query for the tab content on screen less than 600px, 
+Keep the font size of captions in 3% of the viewport width,
+Keep the width of figures in 90% of the viewport width
+*/
+@media screen and (max-width: 600px) {
+  figcaption {
+    font-size: 3vw;
+  }
+  #content {
+    grid-template-columns: 1fr;
+    width: 90vw;
+  }
+}
+
+/*
+********************************************
+Ollie Information Section
+********************************************
+*/
+
+/* Center the Ollie heading */
+.ollie {
+  text-align: center;
+  margin-bottom: 50px;
+  
+}
+
+/* Set the width, margin, border, background color for the table of Ollie's basic info table */
+.animalinfo .basics {
+  width:100%;
+  border-collapse: collapse;
+  background-color: #fbf9f9;
+}
+
+/* Set the border, text alignment, and padding of table cell */
+.animalinfo td {
+  border: 1px solid #000000;
+  text-align: left;
+  padding: 8px;
+}
+
+/* Set the babckground color of the even row of the table */
+.animalinfo tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/* Set the width, margin, and text alignment of Ollie's detail info */
+.details {
+  width: 100%;
+  margin-left: 2%;
+	text-align:justify;
+	overflow: auto;
+}
+
+/* Set margin, font size, and display of Ollie's info container */
+.animalinfo {
+  margin-top: 30px;
+  font-size: 20px;
+  display: inline-flex;
+  overflow: auto;
+}
+
+/* Set the margin, font size, padding, and border of the apply to adopt button */
+.applybutton button{
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  padding: 20px 40px;
+  border-radius: 10px; 
+}
+
+/* Put a hover on the top of apply to adopt button when move the cursor on it */
+.applybutton button:hover {
+  background-color: rgb(109, 109, 109);
+  color: white;
+}
+
+/* Center the apply to adopt button with Ollie's info container */
+.applybutton, .animalinfo{
+	text-align: center;
+}
+
+/* 
+Media query for caption text on screen less than 600px, 
+let the browser move the animal info below the slide picture
+*/
+@media screen and (max-width: 600px) {
+  .slides.fade, .animalinfo {
+		width: 100%;
+		display:contents;
+		text-align:center;
+	}
+}
+
+/*
+********************************************
+Alternative Ollie Slideshow Section
+********************************************
+*/
+
+/* Set the margin of alternative Ollie heading */
+.alterollie {
+  margin-bottom: 50px;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.alterslidecontainer {
+  position: relative;
+	overflow: hidden;
+}
+
+/* Hide the images by default */
+.alterslides.fade{
+	margin-right: 40%;
+	display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+/* .alterprev, .alternext {
+  cursor: pointer;
+  position:absolute;
+  top: 40%; 
+	width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+} */
+
+/* Position the "next button" to the right */
+/* .alternext {
+  right: 40%;
+  border-radius: 3px 0 0 3px;
+} */
+
+/* On hover, add a black background color with a little bit see-through */
+/* .alterprev:hover, .aalternext:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}   */
+
+
+/* Set the margin, display, etc, of thumbnail image container */
+.row{
+	margin-right: 40%;
+	margin-bottom: 10px;
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Three columns side by side */
+.column {
+  float: left;
+  width: 33.333333333%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+ /* Remove the hover from the selected image */
+.active, .demo:hover {
+  opacity: 1;
+}
+
+/* 
+Media query for caption text on screen less than 600px, 
+let the browser put the cpation text below the slide picture
+*/
+@media screen and (max-width: 600px) {
+	.alterprev{
+		left: 0;
+  }
+}
+
+/*
+*******************************************
+Login Input Section
+*******************************************
+*/
+
+/* style the container */
+.logincontainer {
+  margin-top: 10px;
+  position: relative;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px 0 30px 0;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #d97228;
+  color: white;
+}
+
+/* style inputs and link buttons */
+.logincol input, .logincol .btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; /* remove underline from anchors */
+}
+
+.logincol input:hover, .logincol .btn:hover {
+  opacity: 1;
+}
+
+/* add appropriate colors to fb, twitter and google buttons */
+.logincol .fb {
+  background-color: #3B5998;
+  color: white;
+}
+
+.logincol .twitter {
+  background-color: #55ACEE;
+  color: white;
+}
+
+.logincol .google {
+  background-color: #dd4b39;
+  color: white;
+}
+
+/* style the submit button */
+.logincol input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  cursor: pointer;
+}
+
+.logincol input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Two-column layout */
+.logincol {
+  float: left;
+  width: 50%;
+  margin: auto;
+  padding: 0 50px;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.loginrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* vertical line */
+.vl {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  border: 2px solid #ddd;
+  height: 175px;
+}
+
+/* text inside the vertical line */
+.vl-innertext {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 8px 10px;
+}
+
+/* hide some text on medium and large screens */
+.hide-md-lg {
+  display: none;
+}
+
+/* bottom container */
+.bottom-container {
+  text-align: center;
+  background-color: #666;
+  border-radius: 0px 0px 4px 4px;
+}
+
+.logincontainer *, .bottom-container * {box-sizing: border-box} 
+
+/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 650px) {
+  .logincol {
+    width: 100%;
+    margin-top: 0;
+  }
+  /* hide the vertical line */
+  .vl {
+    display: none;
+  }
+  /* show the hidden text on small screens */
+  .hide-md-lg {
+    display: block;
+    text-align: center;
+  }
+}
+
+/*
+********************************************
+Signup Input Section
+********************************************
+*/
+
+/* Set the width, padding, and border of text input for user signup */
+.signup input{
+  width: 60%;
+  padding: 10px 10px;
+  font-size: 20px;  
+  border: none;
+  /* border-left: none;
+  border-right: none; */
+  border-radius: 4px;
+}
+
+/* Set the margin of signup container */
+.signup {
+  margin-left: 28%;
+}
+
+/* Set the border and padding of sunmit button */
+#submit {
+  border: solid;
+  padding: 20px 40px;
+  border-radius: 10px; 
+}
+
+/* Put a hover on the top of submit button when move the cursor on it */
+#submit:hover {
+  background-color: rgb(109, 109, 109);
+  color: white;
+}
+
+/*
+********************************************
+Mypage datatable Section
+********************************************
+*/
+
+.box-title {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.newapplication {
+  font-size: 20px;
+  padding: 15px 15px;
+}
+
+thead th:last-child{
+  text-align:center;
+}
+
+td:last-child {
+  text-align:center;
+}
+
+#table {
+  margin-top: 20px;
+  background-color: #ffffff;
+}
+
+#table th, #table td {
+  border: none;
+  border-top: groove;
+  border-width: 1px;
+  border-color:#7e7e7e;
+}
+
+/*
+********************************************
+Application Input Section
+********************************************
+*/
+
+/* .application h1, #submit-adopt{
+  text-align: center;
+} */
+
+.modal-body.form-group *{
+  width: 50%;
+  margin-left: 25%;
+  padding: 10px 10px;
+  font-size: 18px;  
+  /* border: none; */
+  border-radius: 4px;
+}
+
+/* #submit-adopt {
+  width: 20%;
+  margin-left: 40%;
+  border: groove;
+  padding: 20px 40px;
+  font-size: 18px;  
+  border-radius: 10px; 
+} */
+
+/* Put a hover on the top of submit button when move the cursor on it */
+/* #submit-adopt:hover {
+  background-color: rgb(109, 109, 109);
+  color: white;
+}  */
+
+/* @media screen and (max-width: 700px) {
+  .form-group * {
+    width: 80%;
+    margin-left: 0%;
+    padding: 10px 10px;
+    font-size: 18px;  
+    border: none;
+    border-radius: 4px;
+  }
+  #submit-adopt {
+    width: 50%;
+    margin-left: 0%;
+    border: groove;
+    padding: 20px 10px;
+    border-radius: 10px; 
+  }
+} */

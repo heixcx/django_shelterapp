@@ -1,0 +1,75 @@
+{% extends "shelterapp/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Heading of Ollie detail page -->
+<h1 class="ollie">Ollie</h1>
+
+<!-- Slideshow contains images of Ollie -->
+<div class="slidescontainer">
+  <div class="slides fade">
+    <img src="{% static 'shelterapp//picture/ollie1.jpg' %}" style="width:100%;" title="Photo by Cong H for Unsplash"><!-- image source: https://unsplash.com/photos/n6j3pkzjdNg -->
+  </div>
+  <div class="slides fade">
+    <img src="{% static 'shelterapp//picture/ollie2.jpg' %}" style="width:100%;" title="Photo by Cong H for Unsplash"><!-- image source: https://unsplash.com/photos/mQBAyIrYu_g -->
+  </div>   
+  <div class="slides fade">
+    <img src="{% static 'shelterapp//picture/ollie3.jpg' %}" style="width:100%;" title="Photo by Cong H for Unsplash"><!-- image source: https://unsplash.com/photos/RWSh0t7bw68 -->
+  </div>
+  <!--Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)" >&#10094;</a>
+  <a class="next" onclick="plusSlides(1)" >&#10095;</a>
+</div>
+  
+<!-- The dot indicators of corresponding image of Ollie -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<!-- Ollie basic info table and details -->
+<div class="animalinfo">
+  <table class="basics">
+    <tr>
+      <td>ID:</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Name:</td>
+      <td>Ollie</td>
+    </tr>
+    <tr>
+      <td>Breed:</td>
+      <td>Shorthair Domastic Cat</td>
+    </tr>
+    <tr>
+      <td>Age:</td>
+      <td>3 Monthes</td>
+    </tr>
+    <tr>
+      <td>Gender:</td>
+      <td>Male</td>
+    </tr> 
+    <tr>
+      <td>Size:</td>
+      <td>kitten 3lbs</td>
+    </tr>
+    <tr>
+      <td>Spayed/Nreutered:</td>
+      <td>No</td>
+    </tr>
+  </table>
+  <p class="details">Ollie is so sweet!! He will start purring as soon as you touch or hold him. He loves “dangly” toys and chasing balls. He also likes to watch television and will paw at moving objects on the screen. His favorite activity would have to be eating though. He will never let you forget to feed him!! </p>
+</div>
+
+<!-- Apply to adopt button -->
+<div class="applybutton">
+  <button onclick="window.location.href='/shelterapp/my/apply/';">Apply To Adopt</button>
+</div>
+
+<!-- Import javascript for slideshow and livechat -->
+<script src="{% static 'shelterapp/slideshow.js' %}"></script>
+
+{% endblock %}

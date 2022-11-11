@@ -1,0 +1,17 @@
+<!-- The html table body for application list -->
+{% for item in queryresult %}
+	<tr> 
+		<td>{{ item.id }}</td>
+		<td>{{ item.animalname }}</td>
+		<td>{{ item.animalid }}</td>
+		<td>{{ item.c_time }}</td>
+		<td>
+			<button id='info-{{ item.id }}' type="button" class="btn btn-success btn-xs dt-info" view-url="{% url 'view' item.id %}" style="margin-right:20px;">
+				<span class="bi bi-eye" aria-hidden="true"></span>
+			</button>
+			<button id='edit-{{ item.id }}' type="button" class="btn btn-primary btn-xs dt-edit" update-url="{% url 'update' item.id %}" style="margin-right:20px;">
+				<span class="bi bi-pencil-square" aria-hidden="true"></span>
+			</button>
+		</td>
+	</tr>
+{% endfor %}

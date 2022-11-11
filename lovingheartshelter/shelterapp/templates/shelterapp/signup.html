@@ -1,0 +1,27 @@
+{% extends "shelterapp/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Sign up heading and form -->
+<div class="signup">
+  <h1>Let's get started</h1>
+  <div class="inputs">
+    <label for="fname">First name*: </label><br>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name*: </label><br>
+    <input type="text" id="lname" name="lname"><br><br>
+    <label for="emial">Email*: </label><br>
+    <input type="text" id="email" name="lname"><br><br>
+    <label for="passwd">Password*: </label><br>
+    <input type="text" id="passwd" name="lname"><br>
+    <label for="lname">Must be 8 or more characters and contains upper and lower cases </label><br><br>
+    <label for="confpasswd">Confirm Password*: </label><br>
+    <input type="text" id="confpasswd" name="lname"><br><br>
+    <label for="phone">Mobile Phone: </label><br>
+    <input type="text" id="phone" name="lname"><br><br>
+    <input type="submit" id="submit" value="Submit">
+  </div>
+</div>
+
+{% endblock %}

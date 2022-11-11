@@ -1,0 +1,103 @@
+<html>
+  <head>
+
+    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'shelterapp/styles.css' %}">
+		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Muli'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<title>LovingHeart Animal Project</title>  
+    <link rel="icon" type="image/png" href="{% static 'shelterapp/picture/pet-care.png' %}">
+	
+	</head>
+
+	<body class="loginform">
+
+		<div class="heading">
+			<a href="/shelterapp"> 
+				<img id="logo" src="{% static 'shelterapp/picture/pet-care.png' %}" alt="heart" style="width:100px;height:100px;"/><!-- image source: https://www.flaticon.com/free-icon/pet-care_2138410?term=pet%20care&page=1&position=25&page=1&position=25&related_id=2138410&origin=tag -->
+			</a> 
+			<a href="/shelterapp"><span style=font-size:32px;font-weight:900;>LovingHeart<br><span style=font-size:18px;font-family:Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif>ANIMAL PROJECT</span> </a>
+		</div>
+
+		<!-- Login form -->
+		<div class="logincontainer">
+			<form action="/shelterapp/login/" method="post">
+				{% if message %}
+          <div class="alert">{{ message }}</div>
+        {% endif %}
+				{% csrf_token %}
+				<div class="loginrow">
+					<h1 style="text-align:center">Welcome, please login!</h1>
+					<div class="vl">
+						<span class="vl-innertext">or</span>
+					</div>
+
+					<!-- Login with social media account -->
+					<div class="logincol">
+						<a href="#" class="fb btn">
+							<i class="fa fa-facebook fa-fw"></i> Login with Facebook
+						</a>
+						<a href="#" class="twitter btn">
+							<i class="fa fa-twitter fa-fw"></i> Login with Twitter
+						</a>
+						<a href="#" class="google btn">
+							<i class="fa fa-google fa-fw"></i> Login with Google+
+						</a>
+					</div>
+					<!-- Login with emial -->
+					<div class="logincol">
+						<div class="hide-md-lg">
+							<p>Or login with Email:</p>
+						</div>
+						<input type="text" name="email" placeholder="Email" required>
+						<input type="password" name="password" placeholder="Password" required>
+						<input type="submit" value="Submit">
+					</div>
+		
+				</div>
+			</form>
+		</div>
+		
+		<div class="bottom-container">
+			<div class="loginrow">
+				<div class="logincol">
+					<a href="/shelterapp/register/" style="color:white" class="btn">Sign up</a>
+				</div>
+				<div class="logincol">
+					<a href="#" style="color:white" class="btn">Forgot password?</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Livechat for online support -->
+    <div id="chatbody"> 
+      <div id="chat-circle" class="btn btn-raised">
+        <div id="chat-overlay"></div>
+        <i class="fa fa-comment fa-2x"></i>
+      </div> 
+      <div class="chat-box">
+        <div class="chat-box-header">Live Support<span class="chat-box-toggle"><i class="fa fa-close fa-2x"></i></span></div>
+        <div class="chat-box-body">
+          <div class="chat-box-overlay"></div>
+          <div class="chat-logs"></div>
+        </div>
+        <div class="chat-input">      
+          <form>
+            <input type="text" id="chat-input" placeholder="Send a message..."/>
+          <button type="submit" class="chat-submit" id="chat-submit"><i class="fa fa-paper-plane"></i></button>
+          </form>      
+        </div>
+      </div>
+    </div>
+
+    <!-- Import javascript for slideshow and livechat -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'shelterapp/livechat.js' %}"></script>
+
+	</body>
+</html>

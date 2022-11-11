@@ -1,0 +1,99 @@
+{% extends "shelterapp/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Animal tab folders with adopt page heading -->
+<div class="animals">
+  <h1>Adoptable Animals</h1>
+  <ul id="tabs">
+    <li><a href="#" name="tab1">All</a></li>
+    <li><a href="#" name="tab2">Dogs</a></li>
+    <li><a href="#" name="tab3">Cats</a></li>
+    <li><a href="#" name="tab4">Others</a></li>
+  </ul> 
+  <div id="content">
+
+    <!-- All animal figures -->    
+    <div id="tab1">
+      <figure id="1">
+        <a href="1/">
+          <img src="{% static 'shelterapp/picture/ollie1.jpg' %}" alt="a white kitten with brown and black spots sitting with its paws slightly outstretched. " title="Photo by Cong H for Unsplash"><!-- image source: https://unsplash.com/photos/n6j3pkzjdNg -->
+          <figcaption>Kitten: Ollie (12 Weeks)</figcaption>
+        </a>
+      </figure>
+    
+      <figure id="2">
+        <img src="https://assets.codepen.io/652/karsten-winegeart-NE0XGVKTmcA-unsplash.jpg" alt="a brown French bulldog puppy laying down and looking up with a hopeful look in its eyes. " title="Photo by Karsten Winegeart for Unsplash">
+        <figcaption>Puppy: Barney (9 Weeks)</figcaption>
+      </figure>
+    
+      <figure id="3">
+        <img src="https://assets.codepen.io/652/kabo-NjWZ07sPEJE-unsplash.jpg" alt="A large long-haired orange cat with a white belly. " title="Photo by Kabo for Unsplash">
+        <figcaption>Cat: Walter (5 Years) </figcaption>
+      </figure>
+    
+      <figure id="4">
+        <img class="colorturn" src="https://assets.codepen.io/652/giacomo-lucarini-7M0SG3ZKdlE-unsplash.jpg" alt="A light brown, long-haired chihuahua sitting next to three rubber duckies. " title="Photo by Giacomo Lucarini for Unsplash">
+        <figcaption>Dog: Miss Sunshine (2 Years) </figcaption>
+      </figure>
+    
+      <figure id="5">
+        <img src="https://assets.codepen.io/652/sergey-semin-Y0WXj3xqJz0-unsplash.jpg" alt="A tabby kitten with green eyes. " title="Photo by Sergey Semin for Unsplash">
+        <figcaption>Kitten: Reese (8 Weeks)</figcaption>
+      </figure>
+    
+      <figure id="6">
+        <img src="https://assets.codepen.io/652/jordan-bigelow-X5VoG4MA5aI-unsplash.jpg" alt="A light brown puppy standing on a white and tan woven pet bed. " title="Photo by Sergey Semin for Unsplash">
+        <figcaption>Puppy: Bruce (10 Weeks)</figcaption>
+      </figure>
+    </div>
+
+    <!-- Dog figures --> 
+    <div id="tab2">
+      <figure id="2">
+        <img src="https://assets.codepen.io/652/karsten-winegeart-NE0XGVKTmcA-unsplash.jpg" alt="a brown French bulldog puppy laying down and looking up with a hopeful look in its eyes. " title="Photo by Karsten Winegeart for Unsplash">
+        <figcaption>Puppy: Barney (9 Weeks)</figcaption>
+      </figure>
+
+      <figure id="4">
+        <img class="colorturn" src="https://assets.codepen.io/652/giacomo-lucarini-7M0SG3ZKdlE-unsplash.jpg" alt="A light brown, long-haired chihuahua sitting next to three rubber duckies. " title="Photo by Giacomo Lucarini for Unsplash">
+        <figcaption>Dog: Miss Sunshine (2 Years) </figcaption>
+      </figure>
+
+      <figure id="6">
+        <img src="https://assets.codepen.io/652/jordan-bigelow-X5VoG4MA5aI-unsplash.jpg" alt="A light brown puppy standing on a white and tan woven pet bed. " title="Photo by Sergey Semin for Unsplash">
+        <figcaption>Puppy: Bruce (10 Weeks)</figcaption>
+      </figure>
+    </div>
+
+    <!-- Cat figures --> 
+    <div id="tab3">
+      <figure id="1">
+        <a href="1/">
+          <img src="{% static 'shelterapp/picture/ollie1.jpg' %}" alt="a white kitten with brown and black spots sitting with its paws slightly outstretched. " title="Photo by Cong H for Unsplash"><!-- image source: https://unsplash.com/photos/n6j3pkzjdNg -->
+          <figcaption>Kitten: Ollie (12 Weeks)</figcaption>
+        </a>
+      </figure>
+
+      <figure id="3">
+        <img src="https://assets.codepen.io/652/kabo-NjWZ07sPEJE-unsplash.jpg" alt="A large long-haired orange cat with a white belly. " title="Photo by Kabo for Unsplash">
+        <figcaption>Cat: Walter (5 Years) </figcaption>
+      </figure>
+
+      <figure id="5">
+        <img src="https://assets.codepen.io/652/sergey-semin-Y0WXj3xqJz0-unsplash.jpg" alt="A tabby kitten with green eyes. " title="Photo by Sergey Semin for Unsplash">
+        <figcaption>Kitten: Reese (8 Weeks)</figcaption>
+      </figure>
+    </div>
+
+    <!-- Other animal figures --> 
+    <div id="tab4"> None</div>
+  </div>
+</div>
+
+<!-- Import javascript for animal tab folders and livechat -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="{% static 'shelterapp/animaltabs.js' %}"></script>
+
+{% endblock %}
